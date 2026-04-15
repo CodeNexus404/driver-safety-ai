@@ -1,0 +1,9 @@
+2026-04-11 12:25:42,767 [DEBUG] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-04-11 12:25:43,157 [DEBUG] Creating converter from 7 to 5
+2026-04-11 12:25:43,157 [DEBUG] Creating converter from 5 to 7
+2026-04-11 12:25:43,157 [DEBUG] Creating converter from 7 to 5
+2026-04-11 12:25:43,157 [DEBUG] Creating converter from 5 to 7
+2026-04-11 12:25:44,105 [WARNING] [ALERT] PHONE_WHILE_DRIVING | HIGH | conf=70% | 2026-04-11 12:25:44
+2026-04-11 12:25:44,107 [INFO] [SNAP] Alert snapshot saved: output/alerts/PHONE_WHILE_DRIVING_2026-04-11_12-25-44.jpg
+2026-04-11 12:25:48,292 [WARNING] [ALERT] NO_SEATBELT | HIGH | conf=58% | 2026-04-11 12:25:48
+2026-04-11 12:25:48,293 [INFO] [SNAP] Alert snapshot saved: output/alerts/NO_SEATBELT_2026-04-11_12-25-48.jpg

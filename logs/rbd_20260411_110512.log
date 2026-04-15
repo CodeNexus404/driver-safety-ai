@@ -1,0 +1,20 @@
+2026-04-11 11:05:17,206 [DEBUG] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-04-11 11:05:17,677 [DEBUG] Creating converter from 7 to 5
+2026-04-11 11:05:17,678 [DEBUG] Creating converter from 5 to 7
+2026-04-11 11:05:17,678 [DEBUG] Creating converter from 7 to 5
+2026-04-11 11:05:17,678 [DEBUG] Creating converter from 5 to 7
+2026-04-11 11:05:19,254 [WARNING] [ALERT] PHONE_WHILE_DRIVING | HIGH | conf=70% | 2026-04-11 11:05:19
+2026-04-11 11:05:19,269 [INFO] [SNAP] Alert snapshot saved: output/alerts/PHONE_WHILE_DRIVING_2026-04-11_11-05-19.jpg
+2026-04-11 11:05:21,079 [WARNING] [ALERT] NO_SEATBELT | HIGH | conf=58% | 2026-04-11 11:05:21
+2026-04-11 11:05:21,085 [INFO] [SNAP] Alert snapshot saved: output/alerts/NO_SEATBELT_2026-04-11_11-05-21.jpg
+2026-04-11 11:05:27,376 [WARNING] [ALERT] PHONE_WHILE_DRIVING | HIGH | conf=70% | 2026-04-11 11:05:27
+2026-04-11 11:05:27,383 [INFO] [SNAP] Alert snapshot saved: output/alerts/PHONE_WHILE_DRIVING_2026-04-11_11-05-27.jpg
+2026-04-11 11:05:33,576 [WARNING] [ALERT] NO_SEATBELT | HIGH | conf=58% | 2026-04-11 11:05:33
+2026-04-11 11:05:33,582 [INFO] [SNAP] Alert snapshot saved: output/alerts/NO_SEATBELT_2026-04-11_11-05-33.jpg
+2026-04-11 11:05:35,419 [WARNING] [ALERT] PHONE_WHILE_DRIVING | HIGH | conf=70% | 2026-04-11 11:05:35
+2026-04-11 11:05:35,424 [INFO] [SNAP] Alert snapshot saved: output/alerts/PHONE_WHILE_DRIVING_2026-04-11_11-05-35.jpg
+2026-04-11 11:05:43,432 [WARNING] [ALERT] PHONE_WHILE_DRIVING | HIGH | conf=70% | 2026-04-11 11:05:43
+2026-04-11 11:05:43,438 [INFO] [SNAP] Alert snapshot saved: output/alerts/PHONE_WHILE_DRIVING_2026-04-11_11-05-43.jpg
+2026-04-11 11:05:44,041 [WARNING] [ALERT] NO_SEATBELT | HIGH | conf=58% | 2026-04-11 11:05:44
+2026-04-11 11:05:44,048 [INFO] [SNAP] Alert snapshot saved: output/alerts/NO_SEATBELT_2026-04-11_11-05-44.jpg
+2026-04-11 11:05:49,159 [INFO] Detection session ended.

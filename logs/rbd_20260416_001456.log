@@ -1,0 +1,11 @@
+2026-04-16 00:15:00,576 [DEBUG] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-04-16 00:15:00,921 [DEBUG] Creating converter from 7 to 5
+2026-04-16 00:15:00,921 [DEBUG] Creating converter from 5 to 7
+2026-04-16 00:15:00,921 [DEBUG] Creating converter from 7 to 5
+2026-04-16 00:15:00,921 [DEBUG] Creating converter from 5 to 7
+2026-04-16 00:15:01,878 [DEBUG] matplotlib data path: /Users/sahil/Downloads/driver-safety-ai/venv/lib/python3.10/site-packages/matplotlib/mpl-data
+2026-04-16 00:15:01,882 [DEBUG] CONFIGDIR=/Users/sahil/.matplotlib
+2026-04-16 00:15:01,883 [DEBUG] interactive is False
+2026-04-16 00:15:01,883 [DEBUG] platform is darwin
+2026-04-16 00:15:01,896 [DEBUG] CACHEDIR=/Users/sahil/.matplotlib
+2026-04-16 00:15:01,898 [DEBUG] Using fontManager instance from /Users/sahil/.matplotlib/fontlist-v390.json

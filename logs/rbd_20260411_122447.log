@@ -1,0 +1,6 @@
+2026-04-11 12:24:51,908 [DEBUG] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-04-11 12:24:52,349 [DEBUG] Creating converter from 7 to 5
+2026-04-11 12:24:52,349 [DEBUG] Creating converter from 5 to 7
+2026-04-11 12:24:52,349 [DEBUG] Creating converter from 7 to 5
+2026-04-11 12:24:52,349 [DEBUG] Creating converter from 5 to 7
+2026-04-11 12:25:29,774 [INFO] Detection session ended.
