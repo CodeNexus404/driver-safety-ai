@@ -1,21 +1,16 @@
+# Virtual environment & cache
 venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .DS_Store
-logs/*.log
-*.log
-*.pt
-models/*.pt
-TESTS/*.pt
-dataset/*.mp4
-output/
-logs/
-test_detector.py
 
-# Model weights (large files)
+# Model weights (ONLY thing to hide)
 *.pt
 *.pth
 *.h5
 *.onnx
 *.tflite
+
+# Optional: test file
+test_detector.py
