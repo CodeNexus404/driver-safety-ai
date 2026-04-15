@@ -201,6 +201,26 @@ model = YOLO('yolov8s.pt')
 model.train(data='path/to/dataset.yaml', epochs=100, imgsz=640)
 ```
 
+## Model Weights
+
+Model weights (YOLOv8) are not included in the repository due to size constraints.
+
+They will be automatically downloaded on first run.
+This project supports multiple YOLOv8 model variants:
+
+- `yolov8n.pt` – Fastest, lower accuracy (best for low-end systems)
+- `yolov8s.pt` – Balanced performance (default)
+- `yolov8m.pt` – Higher accuracy, slower inference
+
+Model selection can be configured in:
+
+```python
+# config/settings.py
+YOLO_MODEL = "yolov8s.pt"
+
+Alternatively, you can manually download from:
+https://github.com/ultralytics/ultralytics
+
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -213,7 +233,7 @@ Contributions are welcome! Please follow these steps:
 
 ## SDG Alignment
 
-This project contributes to **UN Sustainable Development Goal 3: Good Health & Well-being**:
+This project contributes to **UN Sustainable Development Goal 3: Good Health & Well-being**, **UN 9: Industry, Innovation and Infrastructure**,  **UN 11: Sustainable Cities, and Communities**:
 
 - **Target 3.6**: Halve the number of global deaths and injuries from road traffic accidents
 - Uses AI technology to promote safer driving practices
