@@ -12,3 +12,10 @@ dataset/*.mp4
 output/
 logs/
 test_detector.py
+
+# Model weights (large files)
+*.pt
+*.pth
+*.h5
+*.onnx
+*.tflite
