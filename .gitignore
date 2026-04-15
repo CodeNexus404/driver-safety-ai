@@ -5,6 +5,9 @@ __pycache__/
 .DS_Store
 logs/*.log
 *.log
+*.pt
+models/*.pt
+TESTS/*.pt
 dataset/*.mp4
 output/
 logs/
