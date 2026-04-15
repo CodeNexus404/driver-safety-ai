@@ -1,0 +1,14 @@
+# ============================================================
+#  Driver Safety AI – Requirements
+#  Install with:  pip install -r requirements.txt
+# ============================================================
+
+# Core CV & DL
+opencv-python>=4.8.0
+numpy>=1.24.0
+ultralytics>=8.1.0          # YOLOv8 (auto-downloads weights)
+tensorflow>=2.13.0          # Phone classifier (optional if using YOLO / heuristics only)
+
+# Optional – faster inference
+# onnxruntime>=1.16.0       # Uncomment for ONNX export speed-up
+# torch>=2.0.0              # Required if using PyTorch-based YOLO

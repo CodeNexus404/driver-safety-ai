@@ -1,0 +1,253 @@
+# Driver Safety AI
+
+> AI-powered driver safety monitoring system for detecting unsafe behaviors on the road
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
+[![YOLO](https://img.shields.io/badge/YOLO-v8-green)](https://ultralytics.com/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-orange)](https://opencv.org/)
+[![License](https://img.shields.io/badge/License-MIT-purple)](LICENSE)
+
+## Overview
+
+Driver Safety AI uses computer vision and deep learning to monitor driver behavior and detect potentially dangerous actions in real-time. The system aligns with **UN Sustainable Development Goal 3: Good Health & Well-being**, **UN 9: Industry, Innovation and Infrastructure**,  **UN 11: Sustainable Cities, and Communities** by promoting road safety and reducing accidents caused by distracted or unsafe driving.
+
+## Features
+
+The system detects the following unsafe behaviors:
+
+| Behavior | Description | Severity |
+|----------|-------------|----------|
+| **Phone Usage While Driving** | Detects drivers using mobile phones while vehicle is in motion | HIGH |
+| **No Seatbelt** | Identifies occupants not wearing seatbelts | HIGH |
+| **No Helmet** | Detects two-wheeler riders without helmets | HIGH |
+| **Tailgating** | Monitors unsafe following distances between vehicles | MEDIUM |
+
+## Demo
+
+The system provides real-time visual feedback with:
+- Bounding boxes around detected objects (persons, vehicles, phones)
+- Live alert overlays for unsafe behaviors
+- FPS counter and session statistics
+- Automatic snapshot capture of violations
+
+## Installation
+
+### Prerequisites
+
+- Python 3.10 or higher
+- CUDA-capable GPU (optional, for faster inference)
+- Webcam or video file for testing
+
+### Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/CodeNexus404/driver-safety-ai.git
+cd driver-safety-ai
+```
+
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+4. Download the YOLO model (if not included):
+```bash
+# The system uses YOLOv8s by default
+# Model will be auto-downloaded on first run, or place yolov8s.pt in root directory
+```
+
+## Usage
+
+### Running with Webcam
+```bash
+python detector.py
+```
+
+### Running with Video File
+```bash
+python detector.py --source dataset/video1.mp4
+```
+
+### Running with IP Camera (RTSP)
+```bash
+python detector.py --source rtsp://username:password@ip_address:port/stream
+```
+
+### Keyboard Controls
+
+| Key | Action |
+|-----|--------|
+| `Q` | Quit the application |
+| `S` | Save snapshot of current frame |
+
+### Output
+
+- **Alerts**: Saved in `output/alerts/` with timestamps
+- **Snapshots**: Saved in `output/` when you press 'S'
+- **Logs**: Session logs stored in `logs/` directory
+
+## Project Structure
+
+```
+driver-safety-ai/
+├── config/                 # Configuration settings
+│   ├── __init__.py
+│   └── settings.py
+├── dataset/                # Sample video dataset (15 test videos)
+├── logs/                   # Application logs
+├── models/                 # Detection models
+│   ├── yolo_detector.py    # YOLOv8 object detection
+│   ├── phone_detector.py   # Phone usage detection
+│   ├── seatbelt_detector.py # Seatbelt detection
+│   └── helmet_detector.py  # Helmet detection
+├── output/                 # Detection outputs
+│   └── alerts/            # Alert images
+├── utils/                  # Utility modules
+│   ├── alert_manager.py   # Alert handling
+│   └── logger.py          # Logging utilities
+├── TESTS/                  # Test files and additional models
+├── Md/                     # Documentation files
+├── detector.py             # Main application entry point
+├── requirements.txt        # Python dependencies
+├── yolov8s.pt             # YOLOv8 small model weights
+└── README.md              # This file
+```
+
+## Dataset
+
+The `dataset/` folder contains 15 sample videos for testing:
+- `video.mp4` through `video14.mp4` - Various driving scenarios
+
+You can add your own videos to this folder and reference them:
+```bash
+python detector.py --source dataset/your_video.mp4
+```
+
+## Technical Details
+
+### Architecture
+
+The system uses a multi-model pipeline:
+
+1. **YOLOv8** - Primary object detection (persons, vehicles, cell phones)
+2. **Custom Classifiers** - Specialized models for:
+   - Phone usage detection
+   - Seatbelt compliance
+   - Helmet detection
+
+### Temporal Confirmation
+
+To reduce false positives, the system uses temporal confirmation:
+- Detections must persist for multiple consecutive frames before triggering alerts
+- Configurable confirmation thresholds in `config/settings.py`
+
+### Performance Optimizations
+
+- Multi-threaded inference (UI runs on main thread, detection on background thread)
+- Adjustable frame skipping for lower-end hardware
+- GPU acceleration support via PyTorch/CUDA
+
+## Configuration
+
+Edit `config/settings.py` to customize:
+
+```python
+# Detection thresholds
+YOLO_CONF = 0.45                    # YOLO confidence threshold
+PHONE_THRESHOLD = 0.70              # Phone detection threshold
+SEATBELT_THRESHOLD = 0.60           # Seatbelt detection threshold
+HELMET_THRESHOLD = 0.65             # Helmet detection threshold
+
+# Performance settings
+INFERENCE_IMGSZ = 640               # Input resolution for inference
+FRAME_WIDTH = 1280                  # Display width
+FRAME_HEIGHT = 720                  # Display height
+
+# Alert settings
+ALERT_COOLDOWN_SECONDS = 8          # Seconds between duplicate alerts
+DETECTION_CONFIRM_FRAMES = 2      # Frames needed to confirm detection
+```
+
+## Requirements
+
+- Python 3.10+
+- OpenCV 4.x
+- PyTorch 2.x
+- Ultralytics YOLOv8
+- NumPy
+- Pillow
+
+See `requirements.txt` for complete list.
+
+## Model Training
+
+The custom detection models can be retrained with your own dataset:
+
+```python
+# Example training workflow
+from ultralytics import YOLO
+
+# Load model
+model = YOLO('yolov8s.pt')
+
+# Train on custom dataset
+model.train(data='path/to/dataset.yaml', epochs=100, imgsz=640)
+```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## SDG Alignment
+
+This project contributes to **UN Sustainable Development Goal 3: Good Health & Well-being**:
+
+- **Target 3.6**: Halve the number of global deaths and injuries from road traffic accidents
+- Uses AI technology to promote safer driving practices
+- Provides real-time feedback to prevent accidents before they occur
+
+## Limitations
+
+- Performance depends on lighting conditions and camera quality
+- Detection accuracy may vary with different vehicle types
+- Requires clear visibility of subjects
+- Not a substitute for responsible driving
+
+## Future Enhancements
+
+- [ ] Integration with vehicle telematics systems
+- [ ] Cloud-based alerting and monitoring dashboard
+- [ ] Support for multiple camera feeds
+- [ ] Edge deployment on embedded devices (Jetson, Raspberry Pi)
+- [ ] Mobile app for fleet managers
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) for the object detection model
+- [OpenCV](https://opencv.org/) for computer vision utilities
+- United Nations for SDG 3 framework
+
+## Contact
+
+For questions or suggestions, please open an issue or contact the maintainer.
+
+---
+
+**Disclaimer**: This system is designed for safety research and driver assistance. It should not be used as the sole means of ensuring road safety. Always follow traffic laws and drive responsibly.
