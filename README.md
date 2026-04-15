@@ -94,30 +94,29 @@ python detector.py --source rtsp://username:password@ip_address:port/stream
 - **Logs**: Session logs stored in `logs/` directory
 
 ## Project Structure
-
 ```
 driver-safety-ai/
-├── config/                 # Configuration settings
+├── config/                 # Configuration settings (model, thresholds, etc.)
 │   ├── __init__.py
 │   └── settings.py
-├── dataset/                # Sample video dataset (15 test videos)
-├── logs/                   # Application logs
-├── models/                 # Detection models
-│   ├── yolo_detector.py    # YOLOv8 object detection
+├── dataset/                # Sample video dataset (ignored in Git)
+├── logs/                   # Application logs (ignored in Git)
+├── models/                 # Detection modules (logic, not weights)
+│   ├── yolo_detector.py    # YOLOv8 detection (loads model dynamically)
 │   ├── phone_detector.py   # Phone usage detection
 │   ├── seatbelt_detector.py # Seatbelt detection
 │   └── helmet_detector.py  # Helmet detection
-├── output/                 # Detection outputs
+├── output/                 # Detection outputs (ignored in Git)
 │   └── alerts/            # Alert images
 ├── utils/                  # Utility modules
 │   ├── alert_manager.py   # Alert handling
 │   └── logger.py          # Logging utilities
-├── TESTS/                  # Test files and additional models
+├── TESTS/                  # Test files
 ├── Md/                     # Documentation files
 ├── detector.py             # Main application entry point
 ├── requirements.txt        # Python dependencies
-├── yolov8s.pt             # YOLOv8 small model weights
-└── README.md              # This file
+├── .gitignore              # Excludes datasets, logs, models, cache
+└── README.md              # Project documentation
 ```
 
 ## Dataset
